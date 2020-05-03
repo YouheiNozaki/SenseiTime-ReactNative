@@ -1,9 +1,11 @@
+---
+# refer: https://circleci.com/docs/2.1/language-javascript/
 version: 2.1
 
 executors:
   node-lts:
     docker:
-      - image: circleci/node:12.16
+      - image: circleci/node:12.13
     working_directory: ~/repo
 
 commands:
@@ -11,9 +13,9 @@ commands:
     steps:
       - checkout
       - restore_cache:
-        keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependenciesjobs:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
 
 jobs:
   build:
@@ -22,23 +24,23 @@ jobs:
       - setup
       - run: yarn
       - save_cache:
-        paths:
-          - node_modules
-        key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
   test:
     executor: node-lts
     steps:
       - setup
       - run:
-        command: ¦
-          yarn type-check
-          yarn lint
+          command: |
+            yarn type-check
+            yarn lint
 
 workflows:
-  version: 2.1
+  version: 2
   test:
-  jobs:
-    - build
-    - test:
-      requires:
-        - build
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
