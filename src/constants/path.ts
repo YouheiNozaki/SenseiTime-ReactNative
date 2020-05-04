@@ -1,3 +1,4 @@
+export const LOADING = "LOADING";
 export const INITIAL = "INITIAL";
 
 // ログイン画面
@@ -10,7 +11,7 @@ export const HOME = "HOME";
 export const ADJUSTMENTLIST = "ADJUSTMENTLIST";
 
 // Stack ルーティング
-export const INPUT = "INPUTLIST";
+export const DETAIL = "DETAIL";
 export const INPUT_ADJUSTMENT = "INPUT_ADJUSTMENT";
 export const INPUT_WORKTIME = "INPUT_ WORKTIME";
 

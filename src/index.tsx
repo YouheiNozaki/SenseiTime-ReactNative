@@ -1,14 +1,16 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+import React, { useState } from "react";
+import * as UiContext from "./contexts/ui";
+import { LoggingRoutes as Routes } from "./routes";
 
 export const Index = () => {
-  return <View style={styles.container} />;
+  const [applicationState, setApplicationState] = useState(
+    UiContext.createApplicationInitialState()
+  );
+  return (
+    <UiContext.Context.Provider
+      value={{ applicationState, setApplicationState }}
+    >
+      <Routes />
+    </UiContext.Context.Provider>
+  );
 };
