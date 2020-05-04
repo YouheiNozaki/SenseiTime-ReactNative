@@ -12,35 +12,94 @@ import {
   CHOOSE_LOGIN,
   ADJUSTMENTLIST,
   USER_INFO,
+  CONTACT,
+  INPUT,
 } from "../../constants/path";
-import { Initial, Loading, ChooseLogin } from "../../components/pages";
+import { Initial, Loading, ChooseLogin, Input } from "../../components/pages";
 import { HomeNavigator as Home } from "./Home";
 import { AdjustmentListNavigator as AdjustmentList } from "./Adjustment";
 import { UserInfoNavigator as UserInfo } from "./UserInfo";
+import { ContactNavigator as Contact } from "./Contact";
 import * as UiContext from "../../contexts/ui";
 
 const Stack = createStackNavigator();
+const ModalStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+const HomeDrawer = createDrawerNavigator();
+const AdjustmentlistDrawer = createDrawerNavigator();
 const forFade = ({ current }: StackCardInterpolationProps) => ({
   cardStyle: {
     opacity: current.progress,
   },
 });
 
+function HomeWithDrawer() {
+  return (
+    <HomeDrawer.Navigator initialRouteName={HOME}>
+      <HomeDrawer.Screen name={HOME} component={Home} />
+      <HomeDrawer.Screen name={USER_INFO} component={UserInfo} />
+      <HomeDrawer.Screen name={CONTACT} component={Contact} />
+    </HomeDrawer.Navigator>
+  );
+}
+
+function AdhustmentlistDrawer() {
+  return (
+    <AdjustmentlistDrawer.Navigator initialRouteName={HOME}>
+      <AdjustmentlistDrawer.Screen
+        name={ADJUSTMENTLIST}
+        component={AdjustmentList}
+      />
+      <AdjustmentlistDrawer.Screen name={USER_INFO} component={UserInfo} />
+      <AdjustmentlistDrawer.Screen name={CONTACT} component={Contact} />
+    </AdjustmentlistDrawer.Navigator>
+  );
+}
+
+const getActiveRouteName = (state: any): string => {
+  if (!state || !state.routes) {
+    return "";
+  }
+  const route = state.routes[state.index];
+
+  if (route.state) {
+    return getActiveRouteName(route.state);
+  }
+  return route.name;
+};
+
 function TabRoutes() {
   return (
-    <Tab.Navigator initialRouteName={HOME}>
-      <Tab.Screen name={HOME} component={Home} />
-      <Tab.Screen name={ADJUSTMENTLIST} component={AdjustmentList} />
+    <Tab.Navigator
+      initialRouteName={HOME}
+      screenOptions={(props: any) => {
+        const routeName = getActiveRouteName(props.route.state);
+        return {
+          tabBarVisible: routeName !== USER_INFO,
+        };
+      }}
+    >
+      <Tab.Screen name={HOME} component={HomeWithDrawer} />
+      <Tab.Screen name={ADJUSTMENTLIST} component={AdhustmentlistDrawer} />
     </Tab.Navigator>
   );
 }
+
+function TabWithModalRoutes() {
+  return (
+    <ModalStack.Navigator mode="modal" headerMode="none">
+      <Stack.Screen name={HOME} component={TabRoutes} />
+      <Stack.Screen name={INPUT} component={Input} />
+    </ModalStack.Navigator>
+  );
+}
+
 function switchingAuthStatus(status: UiContext.Status) {
   switch (status) {
     case UiContext.Status.UN_AUTHORIZED:
       return <Stack.Screen name={CHOOSE_LOGIN} component={ChooseLogin} />;
     case UiContext.Status.AUTHORIZED:
-      return <Stack.Screen name={HOME} component={TabRoutes} />;
+      return <Stack.Screen name={HOME} component={TabWithModalRoutes} />;
     case UiContext.Status.FIRST_OPEN:
     default:
       return <Stack.Screen name={INITIAL} component={Initial} />;

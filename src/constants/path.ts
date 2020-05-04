@@ -9,9 +9,10 @@ export const SIGNIN = "SIGNIN";
 // Bottom Tab　ルーティング
 export const HOME = "HOME";
 export const ADJUSTMENTLIST = "ADJUSTMENTLIST";
+export const DETAIL = "DETAIL";
 
 // Stack ルーティング
-export const DETAIL = "DETAIL";
+export const INPUT = "INPUT";
 export const INPUT_ADJUSTMENT = "INPUT_ADJUSTMENT";
 export const INPUT_WORKTIME = "INPUT_ WORKTIME";
 

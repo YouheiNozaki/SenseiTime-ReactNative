@@ -5,3 +5,5 @@ export { ChooseLogin } from "./ChooseLogin";
 export { AdjustmentList } from "./AdjustmentList";
 export { Detail } from "./Detail";
 export { UserInfo } from "./UserInfo";
+export { Contact } from "./Contact";
+export { Input } from "./Input";
