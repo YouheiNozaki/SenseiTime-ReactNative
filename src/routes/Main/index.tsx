@@ -35,6 +35,18 @@ import { UserInfoNavigator as UserInfo } from "./UserInfo";
 import { ContactNavigator as Contact } from "./Contact";
 import * as UiContext from "../../contexts/ui";
 
+import { COLOR } from "../../constants/theme";
+import { headerStyle, headerTintColor } from "../Header";
+
+// スタイル
+const cardStyle = {
+  backgroundColor: COLOR.MAIN,
+};
+const drawerStyle = {
+  backgroundColor: COLOR.MAIN,
+};
+
+// Natigatorの初期化
 const Stack = createStackNavigator();
 const ModalStack = createStackNavigator();
 const ChooseLoginStack = createStackNavigator();
@@ -47,9 +59,19 @@ const forFade = ({ current }: StackCardInterpolationProps) => ({
   },
 });
 
+// Drawerの設定
+const drawerContentOptions = {
+  activeTintColor: COLOR.MAIN_DARK,
+  inactiveTintColor: COLOR.WHITE,
+};
+
 function HomeWithDrawer() {
   return (
-    <HomeDrawer.Navigator initialRouteName={HOME}>
+    <HomeDrawer.Navigator
+      initialRouteName={HOME}
+      drawerStyle={drawerStyle}
+      drawerContentOptions={drawerContentOptions}
+    >
       <HomeDrawer.Screen name={HOME} component={Home} />
       <HomeDrawer.Screen name={USER_INFO} component={UserInfo} />
       <HomeDrawer.Screen name={CONTACT} component={Contact} />
@@ -59,7 +81,11 @@ function HomeWithDrawer() {
 
 function AdhustmentlistDrawer() {
   return (
-    <AdjustmentlistDrawer.Navigator initialRouteName={HOME}>
+    <AdjustmentlistDrawer.Navigator
+      initialRouteName={ADJUSTMENTLIST}
+      drawerStyle={drawerStyle}
+      drawerContentOptions={drawerContentOptions}
+    >
       <AdjustmentlistDrawer.Screen
         name={ADJUSTMENTLIST}
         component={AdjustmentList}
@@ -101,18 +127,25 @@ function TabRoutes() {
 
 function TabWithModalRoutes() {
   return (
-    <ModalStack.Navigator mode="modal" headerMode="none">
+    <ModalStack.Navigator
+      mode="modal"
+      headerMode="none"
+      screenOptions={{ cardStyle }}
+    >
       <Stack.Screen name={HOME} component={TabRoutes} />
       <Stack.Screen name={INPUT} component={Input} />
-      <Stack.Screen name={INPUT_WORKTIME} component={InputWorkTime} />
       <Stack.Screen name={INPUT_PLANS} component={InputPlans} />
+      <Stack.Screen name={INPUT_WORKTIME} component={InputWorkTime} />
     </ModalStack.Navigator>
   );
 }
 
 function ChooseLoginNavigator() {
   return (
-    <ChooseLoginStack.Navigator initialRouteName={CHOOSE_LOGIN}>
+    <ChooseLoginStack.Navigator
+      initialRouteName={CHOOSE_LOGIN}
+      screenOptions={{ cardStyle, headerStyle, headerTintColor }}
+    >
       <ChooseLoginStack.Screen name={CHOOSE_LOGIN} component={ChooseLogin} />
       <ChooseLoginStack.Screen name={SIGN_IN} component={SignIn} />
       <ChooseLoginStack.Screen name={SIGN_UP} component={SignUp} />
