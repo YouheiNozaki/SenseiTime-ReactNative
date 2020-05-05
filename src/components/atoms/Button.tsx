@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
 interface Props {
   onPress: () => void;
-  style: ViewStyle | ViewStyle[];
+  style?: ViewStyle | ViewStyle[];
   textStyle?: TextStyle | TextStyle[];
   label?: string;
   color?: string;
