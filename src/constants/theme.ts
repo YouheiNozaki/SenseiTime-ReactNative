@@ -11,3 +11,14 @@ export const COLOR = {
   GRAY_LIGHT: "#F2F2F7",
   CAROUSEL_BACKGROUND: "rgba(0,0,0,0,5)",
 };
+
+export const FONTSIZE = {
+  HERO: 52,
+  DISPLAY2: 45,
+  DISPLAY: 34,
+  HEADING: 24,
+  TITLE: 22,
+  SUBTITLE: 18,
+  BODY: 14,
+  CAPTION: 12,
+};

@@ -40,7 +40,7 @@ import { headerStyle, headerTintColor } from "../Header";
 
 // スタイル
 const cardStyle = {
-  backgroundColor: COLOR.MAIN,
+  backgroundColor: COLOR.WHITE,
 };
 const drawerStyle = {
   backgroundColor: COLOR.MAIN,
@@ -112,6 +112,13 @@ function TabRoutes() {
   return (
     <Tab.Navigator
       initialRouteName={HOME}
+      tabBarOptions={{
+        inactiveTintColor: COLOR.WHITE,
+        activeTintColor: COLOR.MAIN_DARK,
+        style: {
+          backgroundColor: COLOR.MAIN,
+        },
+      }}
       screenOptions={(props: any) => {
         const routeName = getActiveRouteName(props.route.state);
         return {
