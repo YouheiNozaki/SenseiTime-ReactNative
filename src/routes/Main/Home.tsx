@@ -13,6 +13,7 @@ const Stack = createStackNavigator();
 export const HomeNavigator = () => {
   return (
     <Stack.Navigator
+      mode="modal"
       initialRouteName={HOME}
       screenOptions={{
         cardStyle,

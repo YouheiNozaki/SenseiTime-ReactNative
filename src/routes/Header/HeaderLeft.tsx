@@ -13,7 +13,7 @@ export const HeaderLeft = () => {
     <Icon.Button
       name="bars"
       color={COLOR.WHITE}
-      backgroundColor={COLOR.WHITE}
+      backgroundColor={COLOR.MAIN}
       onPress={onPress}
     />
   );
