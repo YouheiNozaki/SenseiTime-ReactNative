@@ -3,6 +3,7 @@ import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import { Button, dismiss, TextField } from "../../atoms";
 import { useControlledComponent } from "../../../lib/hooks";
 import { Context, Status } from "../../../contexts/ui";
+import { SignUpWithGoogle } from "./SignUpWithGoogle";
 
 const styles = StyleSheet.create({
   container: {
@@ -14,6 +15,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 20,
+    marginBottom: 50,
   },
 });
 
@@ -44,6 +46,7 @@ export const SignUp = () => {
           style={styles.button}
           label="登録する"
         />
+        <SignUpWithGoogle />
       </View>
     </TouchableWithoutFeedback>
   );

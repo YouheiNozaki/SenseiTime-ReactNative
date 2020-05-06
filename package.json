@@ -23,7 +23,9 @@
     "react-native-paper": "^3.9.0",
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.7.3",
+    "react-native-safe-area-view": "^1.1.1",
     "react-native-screens": "^2.2.0",
+    "react-native-snap-carousel": "^3.9.0",
     "react-native-vector-icons": "^6.6.0",
     "react-native-web": "~0.11.7"
   },
@@ -32,6 +34,7 @@
     "@react-native-community/eslint-config": "^1.1.0",
     "@types/react": "~16.9.23",
     "@types/react-native": "~0.61.17",
+    "@types/react-native-snap-carousel": "^3.8.1",
     "@types/react-native-vector-icons": "^6.4.5",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
