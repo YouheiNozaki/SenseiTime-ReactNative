@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLOR.MAIN,
   },
   text: {
-    fontSize: FONTSIZE.DISPLAY,
+    fontSize: FONTSIZE.SUBTITLE,
     fontWeight: "800",
     lineHeight: 40,
     color: COLOR.WHITE,
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 3,
     paddingTop: 30,
+    marginTop: 30,
     justifyContent: "space-between",
     paddingBottom: 20,
   },
@@ -54,7 +55,11 @@ export const CarouselItem = ({ onPress, item }: Props) => {
           <View>
             <Text style={styles.text}>{item.text}</Text>
           </View>
-          <Button onPress={onPress} label="次へ" />
+          <Button
+            onPress={onPress}
+            label="次へ"
+            color={COLOR.SECONDARY_LIGHT}
+          />
         </View>
       </View>
     </View>

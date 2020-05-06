@@ -4,7 +4,7 @@ import { CarouselStatic } from "react-native-snap-carousel";
 import SafeAreaView from "react-native-safe-area-view";
 import { Carousel } from "../../organisms";
 import { Pagination } from "../../atoms";
-import { COLOR } from "../../../constants/theme";
+import { COLOR, FONTSIZE } from "../../../constants/theme";
 import { Context, Status } from "../../../contexts/ui";
 
 const styles = StyleSheet.create({
@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: COLOR.WHITE,
+    fontSize: FONTSIZE.BODY,
   },
 });
 
@@ -38,11 +39,11 @@ const renderData = [
   },
   {
     text:
-      "登録した残業時間は調整時間一覧に記録されていきます。¥n各自治体のルールに基づいて、調整を活用しましょう",
+      "登録した残業時間は調整時間一覧に記録されていきます。\n各自治体のルールに基づいて、調整を活用しましょう",
   },
   {
     text:
-      "調整時間の活用や働き方改革についてブログを読んで学びましょう。¥nご寄稿もお待ちしています。",
+      "調整時間の活用や働き方改革についてブログを読んで学びましょう。\nご寄稿もお待ちしています。",
   },
 ];
 

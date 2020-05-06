@@ -9,7 +9,7 @@ export const COLOR = {
   BLACK: "#000000",
   GRAY: "#636366",
   GRAY_LIGHT: "#F2F2F7",
-  CAROUSEL_BACKGROUND: "rgba(0,0,0,0,5)",
+  CAROUSEL_BACKGROUND: "rgba(0,0,0,0.5)",
 };
 
 export const FONTSIZE = {
