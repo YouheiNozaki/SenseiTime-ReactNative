@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLOR.CAROUSEL_BACKGROUND,
   },
   dot: {
-    width: 10,
-    height: 10,
+    width: 8,
+    height: 8,
     borderRadius: 5,
     marginHorizontal: 8,
     backgroundColor: COLOR.WHITE,

@@ -7,7 +7,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/senseitimeMain.png",
+      "image": "./assets/senseiTime.png",
       "resizeMode": "contain",
       "backgroundColor": "#9080FF"
     },
