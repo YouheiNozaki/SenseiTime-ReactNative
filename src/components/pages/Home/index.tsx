@@ -80,6 +80,6 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     width: width / 7,
-    height: width / 7,
+    height: width / 6,
   },
 });
