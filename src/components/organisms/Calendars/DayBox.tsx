@@ -23,5 +23,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: FONTSIZE.CAPTION,
     fontWeight: "600",
+    color: COLOR.WHITE,
   },
 });

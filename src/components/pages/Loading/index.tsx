@@ -10,9 +10,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: COLOR.MAIN,
   },
-  text: {
-    color: COLOR.WHITE,
-  },
 });
 
 function ChangeStateButton(props: { state: UiContext.Status }) {

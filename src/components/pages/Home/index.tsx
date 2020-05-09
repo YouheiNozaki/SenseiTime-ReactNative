@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Calendar, LocaleConfig } from "react-native-calendars";
 import { useNavigation } from "@react-navigation/native";
-import { DETAIL, INPUT } from "../../../constants/path";
+import { DETAIL } from "../../../constants/path";
 import { COLOR, FONTSIZE } from "../../../constants/theme";
 import { width } from "../../../lib/window";
 
@@ -56,9 +56,9 @@ export const Home = () => {
               <TouchableOpacity onPress={() => navigate(DETAIL)}>
                 <Text
                   style={{
+                    fontWeight: "600",
                     textAlign: "center",
                     fontSize: FONTSIZE.CAPTION,
-                    fontWeight: "600",
                     color: state === "disabled" ? COLOR.GRAY_LIGHT : COLOR.GRAY,
                   }}
                 >

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export function useControlledComponent<T>(initialValue: T) {
   const [value, setValue] = useState(initialValue);

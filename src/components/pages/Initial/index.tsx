@@ -4,7 +4,7 @@ import { CarouselStatic } from "react-native-snap-carousel";
 import SafeAreaView from "react-native-safe-area-view";
 import { Carousel } from "../../organisms";
 import { Pagination } from "../../atoms";
-import { COLOR, FONTSIZE } from "../../../constants/theme";
+import { COLOR } from "../../../constants/theme";
 import { Context, Status } from "../../../contexts/ui";
 
 const styles = StyleSheet.create({
@@ -14,10 +14,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     backgroundColor: COLOR.MAIN,
-  },
-  text: {
-    color: COLOR.WHITE,
-    fontSize: FONTSIZE.BODY,
   },
 });
 
