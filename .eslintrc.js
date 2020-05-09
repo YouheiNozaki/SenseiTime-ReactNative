@@ -33,5 +33,6 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "off",
     "react-native/no-raw-text": "off",
     "react-native/sort-styles": "off",
+    "react-native/no-inline-styles": "off",
   },
 };
